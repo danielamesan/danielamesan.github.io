@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Daniela Mesa - Data Analyst</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+		#menu ul {
+                list-style: none; /* Elimina los bullet points */
+                padding-left: 0; /* Elimina el espacio a la izquierda de la lista */
+            }
+
+            #menu ul li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Agrega una línea de separación entre cada elemento del menú */
+            }
+
+            #menu ul li a {
+                color: white; /* Establece el color del texto en blanco */
+                display: block; /* Para que el enlace ocupe todo el ancho del contenedor li */
+                padding: 1em 0; /* Añade espacio vertical alrededor del texto */
+            }
+
+            #menu ul li a:hover {
+                color: #ffcc00; /* Cambia el color del texto cuando pasas el cursor sobre el enlace */
+            }
+
+        #pdf-container {
+            width: 100%;
+            overflow-x: auto; /* Cambiado a "auto" */
+            white-space: nowrap;
+        }
+        #pdf-container canvas {
+            display: inline-block;
+        }
+        .page-navigation {
+            margin-top: 10px;
+        }
+        .page-navigation button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            background-color: #585858;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button.primary {
+            background-color: #585858;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="is-preload">
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<!-- Logo -->
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/image.png" alt="" /></span><span class="title">Daniela Mesa - Data Analyst</span>
+					</a>
+
+					<!-- Nav -->
+					<nav>
+						<ul>
+							<li><a href="#menu">Menu</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+			<!-- Menu -->
+			<nav id="menu">
+				<div id="menu-container"></div>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					<div style="text-align: center;">
+						<h1>Brentford Analysis</h1>
+					</div>
+					<span class="image main"><img src="images/brentford min.png" alt="Banner Image" /></span>
+					<p>Participating in the prestigious Football Analytics Hackathon posed an exciting challenge: to thoroughly analyze a Premier League team and suggest two top transfer targets within a €60 million budget. Selecting Brentford as my focus, armed with the powerful Cube Platform and thorough research, I began my investigative journey. 
+					<br><br>
+					It's worth noting that this challenge drew significant interest, with <b>425</b> applicants competing for participation. After a rigorous selection process, only <b>150</b> were chosen to take part. In this competitive environment, I employed insights gleaned from detailed analytics and personal observation to analyze Brentford's potential transfer targets. 
+					<br><br>				
+					Notably, my resulting report not only offers strategic insights for football analytics but also demonstrates resourcefulness; I opted not to exhaust the entire €60 million budget, recognizing Brentford's maximum highest transfer fee paid for a player stands at €33 million.
+					</p>
+					<div style="display: flex; justify-content: space-between;">
+						<div style="width: 65%;">
+							<div id="pdf-container" style="text-align: center;"></div>							
+								<div class="page-navigation" style="text-align: center;">									
+									<a href="#" id="prev-page-button" class="button primary">Previous Page</a>
+									<a href="#" id="next-page-button" class="button primary">Next Page</a>
+								</div>
+							</div>
+						<div style="width: 30%;">
+							<div style="text-align: center;">
+								<span class="image" style="display: block; margin: 0 auto;">
+									<img src="docs/Certificate Participant.png" alt="Participant Image" style="width: 81.5%; height: auto;" />								
+								</span>
+							</div>
+							<br>
+							<a href="https://petal-trillium-751.notion.site/Hackathon-Football-f2eeed4dc7df4fd982f7360f629fcb80?pvs=4" target="_blank">Notion Page Project</a>
+						</div>
+					</div>
+					
+								
+					<p></p>
+				</div>
+			</div>
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">							
+					<section>
+						<h2>Email</h2>
+						<h3>
+							<p><a href="mailto:danielamesanc@gmail.com" add target="_blank"> danielamesanc@gmail.com</a></p>
+						</h3>
+					</section>
+					<section>
+						<h2>Follow</h2>
+						<div id="datosf"></div>
+					</section>
+					<ul class="copyright">
+						<li>&copy; Daniela Mesa. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+		<!-- Scripts -->			
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/mine.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+		<script>
+			// URL del archivo PDF
+			var pdfUrl = 'docs/BRE_Daniela_Mesa.pdf';
+
+			// Inicializa PDF.js
+			pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+				// Número total de páginas en el PDF
+				var pageCount = pdf.numPages;
+
+				// Crea un contenedor para el carrusel
+				var carousel = document.getElementById('pdf-container');
+
+				// Variable para seguir el número de página actual
+				var currentPage = 1;
+
+				// Función para cargar una página específica
+				function loadPage(pageNumber) {
+					pdf.getPage(pageNumber).then(function(page) {
+						// Obtiene las dimensiones de la página
+						var viewport = page.getViewport({ scale: 1 });
+						// Calcula el tamaño del lienzo
+						var canvas = document.createElement('canvas');
+						canvas.width = viewport.width;
+						canvas.height = viewport.height;
+						// Renderiza la página en el lienzo
+						var context = canvas.getContext('2d');
+						page.render({ canvasContext: context, viewport: viewport });
+						// Agrega el lienzo al contenedor del carrusel
+						carousel.appendChild(canvas);
+					});
+				}
+
+				// Cargar la primera página
+				loadPage(currentPage);
+
+				// Manejador de evento para el botón Next Page
+				document.getElementById('next-page-button').addEventListener('click', function(event) {
+					event.preventDefault(); // Evita que el enlace recargue la página
+					// Elimina la página actual
+					carousel.removeChild(carousel.firstChild);
+					// Incrementa el número de página actual
+					currentPage++;
+					// Verifica si está en la última página y vuelve a la primera si es así
+					if (currentPage > pageCount) {
+						currentPage = 1;
+					}
+					// Carga la página actual
+					loadPage(currentPage);
+					// Mantén la posición de la página
+					document.getElementById('pdf-container').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+				});
+
+				// Manejador de evento para el botón Previous Page
+				document.getElementById('prev-page-button').addEventListener('click', function(event) {
+					event.preventDefault(); // Evita que el enlace recargue la página
+					// Elimina la página actual
+					carousel.removeChild(carousel.lastChild);
+					// Decrementa el número de página actual
+					currentPage--;
+					// Carga la página anterior si está disponible
+					if (currentPage >= 1) {
+						loadPage(currentPage);
+					}
+					// Mantén la posición de la página
+					document.getElementById('pdf-container').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+				});
+			});
+		</script>
+	</body>
+</html>

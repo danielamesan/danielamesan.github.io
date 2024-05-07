@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Daniela Mesa - Data Analyst</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+            #menu ul {
+                list-style: none; /* Elimina los bullet points */
+                padding-left: 0; /* Elimina el espacio a la izquierda de la lista */
+            }
+
+            #menu ul li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Agrega una línea de separación entre cada elemento del menú */
+            }
+
+            #menu ul li a {
+                color: white; /* Establece el color del texto en blanco */
+                display: block; /* Para que el enlace ocupe todo el ancho del contenedor li */
+                padding: 1em 0; /* Añade espacio vertical alrededor del texto */
+            }
+
+            #menu ul li a:hover {
+                color: #ffcc00; /* Cambia el color del texto cuando pasas el cursor sobre el enlace */
+            }
+        </style>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/image.png" alt="" /></span><span class="title">Daniela Mesa - Data Analyst</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div id="menu-container"></div>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<div style="text-align: center;">
+								<h1>The Oracle</h1>
+							</div>
+							<span class="image main"><img src="images/pic011.jpg" alt="Banner Image" /></span>
+							<p>In the contemporary era, data holds the key to unveiling insights that may elude casual observation. This principle extends across various domains, including sports, such as football.
+							</p>
+							<p>During my participation in Le Wagon's Data Analysis bootcamp, my team and I embarked on a challenge: to thoroughly examine the performance of a football team in order to identify its strengths and weaknesses. We pondered whether it was feasible, through data analysis, to predict the outcomes of their upcoming matches.
+							</p>
+							<p>To achieve this, we chose to utilize data from the Italian Serie A. Immersed in the role of data analysts for the coaching staff of Inter Milan during the 2017-2018 season. The primary goal was to analyze the pivotal match scheduled for May 20, 2018: Inter vs. Lazio. This encounter would determine qualification for the fourth position and, consequently, the team's entry into the Champions League.
+							</p>
+							<p>Our team's proposal involved the development of a Strategic Oracle that would provide a comprehensive solution based on advanced data analysis and predictive models to boost sporting success. The main features of the proposal were:							
+							</p>							
+							<ol>
+								<li>Descriptive Analysis</li>
+								<li>Outcome Prediction with Random Forest</li>
+								<li>Heat Maps of On-Field Events and SWOT Analysis</li>						
+								<li>Final Outcome Prediction with Random Forest</li>
+								<li>Comprehensive Predictive Dashboard</li>
+							</ol>
+							<div style="text-align: center;">
+								<h3>Descriptive Analysis</h3>
+							</div>
+							<p>In the initial stage of analysis, the team delved into the simplest aspect of the data: the number of points each team had. It became evident that Inter could only advance to fourth place if they won the next match; a draw wouldn't be adequate to secure their spot in the Champions League.
+							</p>
+							<div style="text-align: center;">
+								<span class="image"><img src="images/Classification.png" alt="Classification Image" /></span>
+							</div>
+							<br>
+							<p>Following this, the database was organized to scrutinize the 37 matches played by each team, aggregating the sum of events for each match using the following SQL code:
+							</p>
+
+							<a href="https://www.notion.so/Creaci-n-de-tabla-count_events_general-c230fd71410c4e91a02abb44a95dbd50" class="button primary fit" target="_blank">SQL Code</a>
+							
+							<br>
+							<p>
+								After merging the tables and scrutinizing the data, several key insights emerged:</p>
+							<ul>
+								<li><b>Victory rates</b>: Initially, Inter had a strong start, while Lazio faced early setbacks but gradually improved. However, towards the end of the season, Lazio's victory rate surpassed that of Inter.</li>
+								<li><b>Match timing</b>: Interestingly, both teams achieved more victories when matches were scheduled for evening hours.</li>
+								<li><b>Penalties</b>: When confronted with penalty situations, Lazio demonstrated a greater propensity to capitalize on these opportunities, often swinging the match outcome in their favor. Moreover, it appeared that throughout the season, Lazio actively sought out penalty situations.</li>
+								<li><b>Fouls</b>: In both scenarios, an increase in the number of fouls corresponded to a higher probability of losing the match.</li>
+								<li><b>Goals</b>: Lazio scored more goals than Inter, but also conceded more goals.</li>
+							</ul>
+							<div style="text-align: center;">
+								<span class="image"><img src="images/General Statistics.png" alt="General Statistics Image" /></span>
+							</div>
+
+							<br>
+							<div style="text-align: center;">
+								<h3>Outcome Prediction with Random Forest</h3>
+							</div>
+							
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">							
+						<section>
+							<h2>Email</h2>
+							<h3>
+								<p><a href="mailto:danielamesanc@gmail.com" add target= "_blank"> danielamesanc@gmail.com</a></p>
+							</h3>
+						</section>
+						<section>
+							<h2>Follow</h2>
+							<div id="datosf"></div>
+						</section>
+						<ul class="copyright">
+							<li>&copy; Daniela Mesa. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/mine.js"></script>
+
+	</body>
+</html>
